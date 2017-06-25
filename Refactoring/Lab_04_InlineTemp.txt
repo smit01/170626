@@ -1,0 +1,71 @@
+﻿// TODO: 針對 $total，套用 Inline Temp 手法
+
+
+int CalculateTotal(int unitPrice, int count) {
+    int total = unitPrice * count;
+    return total;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int CalculateTotal(int unitPrice, int count) {
+    return unitPrice * count;
+}
+

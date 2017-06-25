@@ -1,0 +1,100 @@
+﻿// 變數的內容存的是一個運算式，將運算式轉成函式。
+// 1. 找出內容只被設定過一次的臨時變數
+// 2. 將等號右邊的運算式，擷取成一個 private 獨立函數。
+//
+// TODO: $basePrice 變數那邊，套用 Replace Temp with Query 手法
+
+
+class OrderItem {
+
+    public int quantity { set; get; }
+    public decimal itemPrice { set; get; }
+
+    public decimal getPrice() {
+        decimal basePrice = this.quantity * this.itemPrice;
+        if (basePrice > 10000)
+            return basePrice * 0.90m;
+        else
+            return basePrice * 0.95m;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class OrderItem {
+
+    public int quantity { set; get; }
+    public decimal itemPrice { set; get; }
+
+    public decimal getPrice() {
+        decimal basePrice = getBasePrice();
+        if (getBasePrice() > 10000)
+            return getBasePrice() * 0.90m;
+        else
+            return getBasePrice() * 0.95m;
+    }
+
+    private decimal getBasePrice() {
+        return this.quantity * this.itemPrice;
+    }
+
+}
+

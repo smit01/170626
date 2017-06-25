@@ -1,0 +1,109 @@
+﻿// TODO: 將「排出固定十碼且由近而遠的數列」那段的程式擷取成新函式。
+// TODO: 練習將「讀取資料檔」那段的程式擷取成新函式。
+
+
+// 讀取資料檔
+string sData = "";
+StreamReader objReader = new StreamReader(@"c:\temp\pick3.txt");
+while (!objReader.EndOfStream) {
+    string sLine = objReader.ReadLine();
+    if (sLine != "")
+        sData += sLine;
+}
+objReader.Close();
+
+// 排出固定十碼且由近而遠的數列
+string sNearFar = "01234567890";
+for (int iPos = 0; iPos < sData.Length; iPos++) {
+    string ch = sData.Substring(iPos, 1);
+    sNearFar = ch + sNearFar.Replace(ch, "");
+}
+sNearFar = sNearFar.Substring(0, 5) +
+        "-" + sNearFar.Substring(5, 5); ;
+MessageBox.Show(sNearFar);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+string sData = ReadDataFile(@"c:\temp\pick3.txt");
+GetNearFarList(sData);
+
+// 讀取資料檔
+private static string ReadDataFile(string sFileName) {
+    string result = "";
+    StreamReader objReader = new StreamReader(sFileName);
+    while (!objReader.EndOfStream) {
+        string sLine = objReader.ReadLine();
+        if (sLine != "")
+            result += sLine;
+    }
+    objReader.Close();
+    return result;
+}
+// 排出固定十碼且由近而遠的數列
+private static void GetNearFarList(string sData) {
+    string sNearFar = "01234567890";
+    for (int iPos = 0; iPos < sData.Length; iPos++) {
+        string ch = sData.Substring(iPos, 1);
+        sNearFar = ch + sNearFar.Replace(ch, "");
+    }
+    sNearFar = sNearFar.Substring(0, 5) +
+            "-" + sNearFar.Substring(5, 5); ;
+    MessageBox.Show(sNearFar);
+}

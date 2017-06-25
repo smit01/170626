@@ -1,0 +1,119 @@
+<!-- HTML Helper -->
+
+<h2>TestActionLink</h2>
+<hr />
+<a href="~/home/index/1">Go HomePage</a>
+<hr />
+@Html.ActionLink("Home", "Index"); <hr />
+
+@Html.ActionLink("Home", "Index", "Home") <hr />
+
+@Html.ActionLink("Home", "Index", 
+    new { controller = "Home", id = 1 }) <hr />
+
+
+
+
+
+<h2>TestHtmlHelper</h2>
+
+<label for="fn">Your first name:</label>
+<input type="text" id="fn" name="txtFirstName" />
+
+<br />
+
+@Html.Label("txtLastName", "Your last name:")
+@Html.Editor("txtLastName")
+@Html.EditorFor(m => m.txtLastName)
+
+<hr />
+
+<input type="checkbox" id="chkMusic" name="chkMusic" value="Yes" /> 
+<label for="chkMusic">Music</label>
+
+<br />
+
+@Html.CheckBox("chkSport", true, new {@value = "Yes"})
+@Html.Label("chkSport", "Sport")
+
+
+
+
+
+
+<!-- Create -->
+
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="radios">Sex</label>
+            <div class="col-md-10">
+                <label class="radio-inline" for="radios-0">
+                    <input type="radio" name="intOption" id="radios-0" value="0">
+                    女
+                </label>
+                <label class="radio-inline" for="radios-1">
+                    <input type="radio" name="intOption" id="radios-1" value="1">
+                    男
+                </label>
+                <label class="radio-inline" for="radios-2">
+                    <input type="radio" name="intOption" id="radios-2" value="2">
+                    其他
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="selectbasic">City:</label>
+            <div class="col-md-10">
+                <select id="selectbasic" name="stringOption" class="form-control">
+                    <option value="TaiPei" >
+                        台北
+                    </option>
+                    <option value="TaiChung">台中</option>
+                    <option value="TaiNan">台南</option>
+                </select>
+            </div>
+        </div>
+
+
+
+
+
+<!-- Edit -->
+
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="radios">Sex</label>
+            <div class="col-md-10">
+                <label class="radio-inline" for="radios-0">
+                    <input type="radio" name="intOption" id="radios-0" value="0"
+                            @( (@Model.intOption == 0) ? "checked" : "") >
+                    女
+                </label>
+                <label class="radio-inline" for="radios-1">
+                    <input type="radio" name="intOption" id="radios-1" value="1" @( (@Model.intOption == 1) ? "checked" : "") >
+                    男
+                </label>
+                <label class="radio-inline" for="radios-2">
+                    <input type="radio" name="intOption" id="radios-2" value="2" @( (@Model.intOption == 2) ? "checked" : "") >
+                    其他
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="selectbasic">City:</label>
+            <div class="col-md-10">
+                <select id="selectbasic" name="stringOption" class="form-control">
+                    <option value="TaiPei" 
+                      @( (@Model.stringOption == "TaiPei") ? "selected" : "")>台北</option>
+                    <option value="TaiChung" @( (@Model.stringOption == "TaiChung") ? "selected" : "")>台中</option>
+                    <option value="TaiNan" @( (@Model.stringOption == "TaiNan") ? "selected" : "")>台南</option>
+                </select>
+            </div>
+        </div>
+
+
+
+
+

@@ -1,0 +1,77 @@
+﻿// TODO: 針對 MoreThan5() 函式，套用 Inline Method 手法
+
+
+private void TryInlineMethod(object sender, EventArgs e) {
+    int amount = 7;
+    string rating = MoreThan5(amount) ? "A" : "B";
+    ShowData(rating);
+}
+
+bool MoreThan5(int amount) {
+    return amount > 5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private void TryInlineMethod(object sender, EventArgs e) {
+    int amount = 7;
+    string rating = amount > 5 ? "A" : "B";
+    ShowData(rating);
+}

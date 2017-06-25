@@ -1,0 +1,26 @@
+﻿use master
+go
+
+drop database labDb
+go
+
+create database labDb
+go
+
+use labDb
+go
+
+create table labTable
+(
+  id int not null primary key,
+  data varchar(20),
+  intOption int, 
+  stringOption varchar(20)
+)
+go
+
+insert into labTable values (1, 'Record 1', 0, 'TaiChung')
+insert into labTable values (2, 'Record 2', 1, 'TaiPei')
+insert into labTable values (3, 'Record 3', 0, 'TaiNan')
+go
+

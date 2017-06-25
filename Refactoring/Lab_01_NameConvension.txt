@@ -1,0 +1,78 @@
+﻿// TODO: 針對參數與變數，改用比較符合變數用途的名稱。
+
+
+void ShowStar(int x, string y = "*") {
+    string z = "";
+    for (int i = 1; i <= x; i++) {
+        z += y;
+    }
+    MessageBox.Show(z);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void ShowStar(int iCount, string sShowWhat = "*") {
+    string sStars = "";
+    for (int i = 1; i <= iCount; i++) {
+        sStars += sShowWhat;
+    }
+    MessageBox.Show(sStars);
+}
+
